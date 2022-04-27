@@ -19,6 +19,7 @@ docker run -it node:12-stretch bash
 
 # run and allow port 3000
 docker run -it --publish 3000:3000 looshi-node-app:latest
+docker run -it -p 3000:3000 looshi-node-app:latest  # shorthand
 
 # pause / unpause
 docker pause docker-name-or-id
