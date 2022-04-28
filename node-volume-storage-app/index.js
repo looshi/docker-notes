@@ -1,4 +1,11 @@
-// Read file and print its contents to console
+/*
+  Reads all files located in process.env.DATA_PATH
+  For each file, updates the "updated" property.
+  ( there is only file right now ).
+
+  You should see file changes on the host computer after
+  using the run command from the Readme.
+*/
 const fs = require("fs");
 const path = require("path");
 
@@ -18,9 +25,8 @@ fs.readdir(dataPath, (err, files) => {
 
   files.forEach((file) => {
     const filePath = dataPath + "/" + file;
-    console.log(file);
     const data = fs.readFileSync(filePath, { encoding: "utf8", flag: "r" });
-    console.log(data);
+    console.log("file data:", data);
 
     // Update the "updated" entry in the json file to current time.
     try {
