@@ -2,7 +2,7 @@
 # A container is a running instance of an image.
 # Containers contain all of their own dependencies.
 Docker registry: https://hub.docker.com
-All tags: https://hub.docker.com/_/node
+All node tags: https://hub.docker.com/_/node
 Docs: https://docs.docker.com/reference/
 
 # run
@@ -89,10 +89,23 @@ cat > looshi.txt
 # which windows are you in ?
 cat /etc/issue  #Ubuntu 18.04.6 LTS \n \l
 
-# File storage within containers
+# ------------ File storage within containers ------------
+# There is none ?
 # Containers are ephemeral, so if they need storage the Docker Host
 # can create volumes which docker containers can access.
 https://docs.docker.com/engine/reference/commandline/volume_create/
+
+# Create a mount of type bind
+# From the container's perspective, the files appear as if they were local.
+# This example will bind the static asset file in the nginx example app
+# to a "raw" nginx container.
+cd docker-notes
+docker run --mount type=bind,source="$(pwd)"/nginx-app/data/www,target=/usr/share/nginx/html -p 8080:80 nginx:1.21
+
+
+# Create a mount of type volume
+docker run --env DATA_PATH=/my-data/data.txt --mount type=volume,src=incrementor-data,target=/data incrementor
+
 
 # ------------ CHROOT ------------
 # Below are some general notes on namespaces and cgroups
