@@ -1,8 +1,9 @@
 ```sh
-Docker hub: https://hub.docker.com
-
-# tags are similar to package names
+# A container is a running instance of an image.
+# Containers contain all of their own dependencies.
+Docker registry: https://hub.docker.com
 All tags: https://hub.docker.com/_/node
+Docs: https://docs.docker.com/reference/
 
 # run
 docker run looshi-image:late
@@ -29,11 +30,12 @@ docker unpause docker-name-or-id
 docker kill container-name
 docker kill $(docker ps -q) # kill all
 
-# show all containers that are running
-docker ps
+# show all containers
+docker ps         # that are running
+docker ps --all   # that have been run or are running
 
-# show all containers that exist on the host, i guess a log of everything running or already ran
-docker ps --all
+# show all images
+docker image list
 
 # run and then destroy right after its run with --rm
 docker run -it --name looshi-image --rm alpine:3.10
@@ -66,8 +68,7 @@ docker image list
 # remove a container
 docker rm container-id
 
-
-# find which image you are currently in
+# find which container you are currently in
 cat /etc/issue
 
 # connect to an already running container
@@ -88,17 +89,18 @@ cat > looshi.txt
 # which windows are you in ?
 cat /etc/issue  #Ubuntu 18.04.6 LTS \n \l
 
+# File storage within containers
+# Containers are ephemeral, so if they need storage the Docker Host
+# can create volumes which docker containers can access.
+https://docs.docker.com/engine/reference/commandline/volume_create/
 
 # ------------ CHROOT ------------
+# Below are some general notes on namespaces and cgroups
+# Probably won't be using these directly as the whole point of Docker
+# is to abstract away these linux capabilities.
 # chroot is about hiding files outside of the root
 # unshare is about hiding processes or capabilities outside the root,
 # e.g. ps aux will only show what's inside the root after you unshare
-
-# start the docker container:
-docker run -it --name docker-host --rm --privileged ubuntu:bionic
-
-# Connect to an already running docker container:
-docker exec -it <container-id> bash
 
 # chroot changes the root for any processes ran after ?
 # ( needs a space after my-new-root )
