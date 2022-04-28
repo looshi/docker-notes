@@ -107,6 +107,24 @@ docker run --mount type=bind,source="$(pwd)"/nginx-app/data/www,target=/usr/shar
 docker run --env DATA_PATH=/my-data/data.txt --mount type=volume,src=incrementor-data,target=/data incrementor
 
 
+# ------------ Docker Network ------------
+
+# list networks
+docker network ls
+
+# create a network for various containers to connect to so they can talk to each other
+docker network create --driver=bridge my-docker-network
+
+# Remove the network
+docker network rm my-docker-network
+
+# Run mongo connected to this network
+docker run -d --network=my-docker-network -p 27017:27017 --name=db --rm mongo:3
+
+# Run a separate mongo client connected to the same above docker instance
+docker run -it --network=my-docker-network --rm mongo:3 mongo --host db
+
+
 # ------------ CHROOT ------------
 # Below are some general notes on namespaces and cgroups
 # Probably won't be using these directly as the whole point of Docker
