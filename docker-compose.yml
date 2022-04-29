@@ -1,0 +1,25 @@
+# builds each service, then runs them all
+# sudo docker-compose up
+# After making changes to individual docker files force build:
+# docker-compose up --build
+version: "3"
+services:
+  express-app:
+    image: express-app
+    build: ./express-app
+    ports:
+      - "3000:3000"
+  nginx-app:
+    image: nginx-app
+    build: ./nginx-app
+    ports:
+      - "8080:80"
+  node-volume-storage-app:
+    image: node-volume-storage-app
+    build: ./node-volume-storage-app
+    # docker-compose will expand relative paths so this works
+    # whereas on docker run you have to use $(pwd)
+    volumes:
+      - ./node-volume-storage-app/my-docker-volume:/my-docker-volume
+    environment:
+      - DATA_PATH=/my-docker-volume
