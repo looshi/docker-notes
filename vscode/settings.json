@@ -1,0 +1,16 @@
+{
+    "breadcrumbs.enabled": false,
+    "workbench.startupEditor": "none",
+    "workbench.statusBar.visible": false,
+    "workbench.activityBar.visible": false,
+    "workbench.iconTheme": null,
+    "workbench.colorTheme": "Atom One Dark",
+    "workbench.colorCustomizations": {
+        "[Atom One Dark]": {}
+    },
+    "workbench.editor.highlightModifiedTabs": true,
+    "editor.formatOnSave": true,
+    "editor.minimap.enabled": false,
+    "editor.renderControlCharacters": false,
+    "editor.renderWhitespace": "none"
+}
