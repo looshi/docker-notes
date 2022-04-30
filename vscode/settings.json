@@ -11,6 +11,16 @@
     "workbench.editor.highlightModifiedTabs": true,
     "editor.formatOnSave": true,
     "editor.minimap.enabled": false,
+    "javascript.suggestionActions.enabled": false,
+    "editor.quickSuggestions": {
+        "other": false,
+        "comments": false,
+        "strings": false
+    },
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
+    "editor.snippetSuggestions": "none",
     "editor.renderControlCharacters": false,
-    "editor.renderWhitespace": "none"
+    "editor.renderWhitespace": "none",
+    "window.zoomLevel": -1,
+    "editor.lightbulb.enabled": false
 }
