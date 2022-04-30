@@ -1,0 +1,17 @@
+# My gitconfig preferences
+[core]
+	excludesfile = [Users/YOU]/.gitignore_global
+  editor = "nano"
+  pager = "less -x2"
+[user]
+	name = [YOUR github username]
+	email = [YOUR EMAIL]
+[push]
+	default = simple
+[color]
+  ui = auto
+[alias]
+  hist = log --pretty=format:\"%C(yellow)%h%C(reset) %ad %C(green)%s%C(reset) %C(magenta)[%an]%C(reset)%d\" --graph --date=short
+  cleanup = !git remote prune origin && git gc
+	recent-branches = for-each-ref --count=5 --sort=-committerdate refs/heads/ --format=\"%(color:green)%(refname:short)%(color:reset)\"
+	delete-merged = !git branch --merged | grep -v "^*" | xargs -n 1 git branch -d
