@@ -1,26 +1,130 @@
 {
-    "breadcrumbs.enabled": false,
-    "workbench.startupEditor": "none",
-    "workbench.statusBar.visible": false,
-    "workbench.activityBar.visible": false,
-    "workbench.iconTheme": null,
-    "workbench.colorTheme": "Atom One Dark",
-    "workbench.colorCustomizations": {
-        "[Atom One Dark]": {}
-    },
-    "workbench.editor.highlightModifiedTabs": true,
-    "editor.formatOnSave": true,
-    "editor.minimap.enabled": false,
-    "javascript.suggestionActions.enabled": false,
-    "editor.quickSuggestions": {
-        "other": false,
-        "comments": false,
-        "strings": false
-    },
-    "editor.suggest.snippetsPreventQuickSuggestions": true,
-    "editor.snippetSuggestions": "none",
-    "editor.renderControlCharacters": false,
-    "editor.renderWhitespace": "none",
-    "window.zoomLevel": -1,
-    "editor.lightbulb.enabled": false
+  "breadcrumbs.enabled": false,
+  "workbench.startupEditor": "none",
+  "workbench.statusBar.visible": false,
+  "workbench.activityBar.visible": false,
+  "workbench.iconTheme": null,
+  "workbench.colorTheme": "Atom One Dark",
+  "workbench.colorCustomizations": {},
+  "workbench.editor.highlightModifiedTabs": true,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "javascript.suggestionActions.enabled": false,
+  "editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+  },
+  "editor.suggest.snippetsPreventQuickSuggestions": true,
+  "editor.snippetSuggestions": "none",
+  "editor.renderControlCharacters": false,
+  "editor.renderWhitespace": "none",
+  "window.zoomLevel": -1,
+  "editor.lightbulb.enabled": false,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.trimAutoWhitespace": false,
+  "files.trimTrailingWhitespace": true,
+  "editor.tokenColorCustomizations": {
+    "[Atom One Dark]": {
+      "variables": "#27abe4",
+      "textMateRules": [
+        {
+          "scope": "variable.parameter",
+          "settings": {
+            "foreground": "#acacc3",
+            "fontStyle": ""
+          }
+        },
+        {
+          "name": "Variable",
+          "scope": [
+            "variable"
+          ],
+          "settings": {
+            "foreground": "#9d9ee0"
+          }
+        },
+        {
+          "name": "[VSCODE-CUSTOM] JS/TS Meta Object Literal Key",
+          "scope": [
+            "meta.object-literal.key.js",
+            "meta.object-literal.key.ts"
+          ],
+          "settings": {
+            "foreground": "#9d9ee0"
+          }
+        },
+        {
+          "name": "[VSCODE-CUSTOM] JSON Property Name",
+          "scope": "support.type.property-name.json",
+          "settings": {
+            "foreground": "#9d9ee0"
+          }
+        },
+        {
+          "name": "[VSCODE-CUSTOM] JSON Punctuation for Property Name",
+          "scope": "support.type.property-name.json punctuation",
+          "settings": {
+            "foreground": "#cccdf6"
+          }
+        },
+        {
+          "name": "[VSCODE-CUSTOM] JS/TS Variable Property",
+          "scope": [
+            "support.variable.property.js",
+            "support.variable.property.ts",
+            "support.variable.property.tsx"
+          ],
+          "settings": {
+            "foreground": "#cccdf6"
+          }
+        },
+        {
+          "name": "[VSCODE-CUSTOM] JS/TS Support Variables",
+          "scope": [
+            "source.js support.variable",
+            "source.ts support.variable",
+            "source.tsx support.variable"
+          ],
+          "settings": {
+            "foreground": "#cccdf6"
+          }
+        },
+        {
+          "name": "[VSCODE-CUSTOM] JS/TS Support Variable Dom",
+          "scope": [
+            "support.variable.dom.js",
+            "support.variable.dom.ts"
+          ],
+          "settings": {
+            "foreground": "#cccdf6"
+          }
+        },
+        {
+          "name": "[VSCODE-CUSTOM] JS/TS Support Variable Property Dom",
+          "scope": [
+            "support.variable.property.dom.js",
+            "support.variable.property.dom.ts"
+          ],
+          "settings": {
+            "foreground": "#cccdf6"
+          }
+        },
+        {
+          "name": "[VSCODE-CUSTOM] JS/TS Variable Alias",
+          "scope": [
+            "variable.other.readwrite.alias.js",
+            "variable.other.readwrite.alias.ts",
+            "variable.other.readwrite.alias.jsx",
+            "variable.other.readwrite.alias.tsx"
+          ],
+          "settings": {
+            "foreground": "#cccdf6"
+          }
+        }
+      ]
+    }
+  },
+  "files.insertFinalNewline": true
 }
