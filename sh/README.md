@@ -1,6 +1,8 @@
 ```sh
 # Random Shell Stuff
 
+# -------- Change shell prompt on the fly --------
+export PS1 = ":)"
 
 #  -------- tldr  --------
 # easy way for quick referencing
