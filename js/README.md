@@ -91,12 +91,13 @@ console.log([...iterable1]);
 
 // ----------------- Async Await ----------------
 
-const fs = require('fs');
-const { promisify } = require('util');
+const fs = require('fs').promises;
+// const { promisify } = require('util');
+// promisify(fs.readFile) ( prior to fs promises )
 
 
 async function looshi() {
-  const d = await promisify(fs.readFile)('./package-lock.json');
+  const d = await fs.readFile('./package-lock.json');
   return d;
 }
 
