@@ -1,6 +1,39 @@
 ```js
 // JS stuff I can never remember ...
 
+
+// ------------- Node Callback Queues ----------------
+/*
+
+When the callstack is empty, js will grab the next item
+from one of callback queues and add it to the callstack.
+So, the various queues wait for the callstack to be empty.
+The event loop checks the callstack on each tick, when callstack
+is empty it will grab the next item from a Queue.
+in order of priority:
+
+MicroTask Queue
+  process.nextTick
+  promises
+
+Timer Queue
+   setTimeout schedules the time a fn is added here,
+   not when it is actually ran.
+
+
+IO Queue
+  filesystem, network socket
+
+
+Check Queue
+  setImmediate - will run after the IO Queue is done
+
+
+Close Queue
+  any "close" event listeners
+
+*/
+
 // ---------------- Generators ----------------
 
 function* myGenerator() {
