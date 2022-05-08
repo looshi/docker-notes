@@ -27,6 +27,7 @@ ps aux
 ps aux | node # look for for node processes
 
 
+lsof -i :3333 # find processes at a specific port
 
 #  -------- kill  --------
 # Stops processes
