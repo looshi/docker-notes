@@ -50,6 +50,14 @@ sudo apt install htop
 htop # start htop
 
 
+#  -------- bg  ------
+# run a process in the background
+node server.js
+CTRL-Z # pauses process and puts in jobs list
+jobs # lists jobs
+bg 1 # start job #1 in background
+fg 1 # bring job #1 to foreground
+
 
 # -------- tmux --------
 sudo apt install tmux
